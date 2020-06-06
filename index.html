@@ -10,6 +10,7 @@
 </head>
 
 <body>
+
   <div class="wrapper">
     <header>
       <h1>Password Generator</h1>
@@ -24,15 +25,27 @@
 
         <textarea readonly id="password" placeholder="Your Secure Password" aria-label="Generated Password"></textarea>
       </div>
+      <!-- allow you to check what parameter of the password -->
+      <form name="checkBoxes">
+        <input id="caseSensitive" type="checkbox" id="caseSensitive">
+        <label for="casesensitive">Do you want Case Sensitive?</label><br>
 
+        <input id="specChar" type="checkbox" id="specChar">
+        <label for="specchar">Do you want Special Characters?</label><br>
+
+        <input id="numbers" type="checkbox" id="numbers">
+        <label for="numbers1">Do you want Numbers?</label><br>
+
+        <input type="text" id="passLength">How long do you want your password to be?
+
+      </form>
       <div class="card-footer">
-
         <button id="generate" class="btn">Generate Password</button>
       </div>
-
     </div>
-  </div>
 
+  </div>
+  <script src="script.js"></script>
 </body>
 
 </html>
