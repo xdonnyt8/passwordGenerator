@@ -1,10 +1,8 @@
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
 var passwordEl = document.querySelector("#passaword");
+var checkBoxForm = document.querySelector("#checkBoxes");
 
-var abc = document.getElementById("CaseSensitive").checked;
-var nums = document.getElementById("numbers").checked;
-var spec = document.getElementById("specChar").checked;
 
 // variables that the password would be
 var numbers = "1234567890"
@@ -13,20 +11,22 @@ var upperCase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
 var specialChar = "~!@#$%^&*()_+`<>?.,/[]{}"
 
 function generatePassword() {
+
+  console.log(checkBoxForm.caseSensitive)
   var passCode = "abcdefghijklmnopqrstuvwxyz";
   //Check if the boxes are check then add the variables to the lower case letters
-  if (abc) {
+  if (checkBoxForm.caseSensitive.checked ) {
     passCode += upperCase;
   }
-  if (nums) {
+  if (checkBoxForm.numbers.checked) {
     passCode += numbers;
   }
-  if (spec) {
+  if (checkBoxForm.specChar.checked) {
     passCode += specialChar;
   }
   var passCodeEl = "";
-  var pLength = parseInt(document.getElementById("passLength").value)
-  for (let i = 0; i < pLength.length; i++) {
+  var pLength = parseInt(checkBoxForm.passLength.value)
+  for (var i = 0; i < pLength; i++) {
     var randomP = Math.floor(Math.random() * passCode.length);
     passCodeEl += passCode[randomP];
     console.log(passCodeEl)
@@ -38,7 +38,6 @@ function generatePassword() {
   function writePassword() {
     var password = generatePassword();
     var passwordText = document.querySelector("#password");
-console.log(password)
     passwordText.value = password;
   }
 
