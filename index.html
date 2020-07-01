@@ -7,6 +7,9 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge" />
   <title>Password Generator</title>
   <link rel="stylesheet" href="style.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+
 </head>
 
 <body>
@@ -27,8 +30,12 @@
       </div>
       <!-- allow you to check what parameter of the password -->
       <form id="checkBoxes">
-        <input id="caseSensitive" type="checkbox" checked>
-        <label for="casesensitive">Do you want Case Sensitive?</label><br>
+
+        <input id="lowerCase" type="checkbox" checked>
+        <label for="lowerCase">Do you want lower case letters?</label><br>
+
+        <input id="upperCase" type="checkbox" checked>
+        <label for="upperCase">Do you want upper case letters?</label><br>
 
         <input id="specChar" type="checkbox" checked>
         <label for="specchar">Do you want Special Characters?</label><br>
